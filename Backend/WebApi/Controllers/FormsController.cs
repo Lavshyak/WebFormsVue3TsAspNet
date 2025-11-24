@@ -30,18 +30,19 @@ public class FormsController : ControllerBase
     public async Task<IEnumerable<JsonFormDto>> Search([FromBody] SearchingConfigurationDto searchingConfigurationDto,
         [FromServices] IJsonFormsRepository jsonFormsRepository)
     {
+        // TODO: handle duplicated paths in searchingConfigurationDto.PathsValues
         var searchingConfiguration = new SearchingConfiguration()
         {
-            Id = searchingConfigurationDto.Id,
+            Guid = searchingConfigurationDto.Guid,
             Take = searchingConfigurationDto.Take,
             Skip = searchingConfigurationDto.Skip,
             CreatedAfterIncluding = searchingConfigurationDto.CreatedAfterIncluding,
             CreatedBefore = searchingConfigurationDto.CreatedBefore,
-            PathsValues = searchingConfigurationDto.PathsValues.Select(kvp => KeyValuePair.Create(kvp.Key,
+            PathsValues = searchingConfigurationDto.PathsValues?.Select(pathAndArray => KeyValuePair.Create((ICollection<string>)pathAndArray.Path,
                 (IValueSearchingConfiguration)new ValueSearchingConfiguration()
                 {
-                    Value = kvp.Value.Value
-                })).ToDictionary()
+                    ExactStringValue = pathAndArray.ValueSearchingConfigurationDto.ExactStringValue
+                })).ToDictionary() ?? []
         };
 
         var forms = await jsonFormsRepository.Search(searchingConfiguration);
@@ -50,7 +51,7 @@ public class FormsController : ControllerBase
         {
             CreatedAt = f.CreatedAt,
             Guid = f.Guid,
-            JsonNode = f.JsonNode
+            FormJson = f.JsonNode
         });
 
         return formDtos;

@@ -2,12 +2,12 @@
 
 public interface ISearchingConfiguration
 {
-    IDictionary<ICollection<string>, IValueSearchingConfiguration> PathsValues { get; }
+    IReadOnlyDictionary<ICollection<string>, IValueSearchingConfiguration> PathsValues { get; }
     
     DateTime? CreatedAfterIncluding { get; }
     DateTime? CreatedBefore { get; }
     
-    Guid? Id { get; }
+    Guid? Guid { get; }
     
     int? Skip { get; }
     int? Take { get; }

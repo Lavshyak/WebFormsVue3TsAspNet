@@ -1,4 +1,5 @@
 using System.Text.Json;
+using DomainApp.Repositories.FormsRepository;
 using DomainApp.Services;
 using PersistenceRam.Repositories;
 
@@ -11,8 +12,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<JsonFormsRepositoryRam>();
-builder.Services.AddScoped<StoreJsonFormService>();
+builder.Services.AddScoped<IJsonFormsRepository, JsonFormsRepositoryRam>();
+builder.Services.AddScoped<IStoreJsonFormService, StoreJsonFormService>();
 
 builder.Services.AddCors(options =>
 {

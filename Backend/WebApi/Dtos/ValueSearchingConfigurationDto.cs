@@ -2,5 +2,5 @@
 
 public class ValueSearchingConfigurationDto
 {
-    public string? Value { get; init; }
+    public string? ExactStringValue { get; init; }
 }

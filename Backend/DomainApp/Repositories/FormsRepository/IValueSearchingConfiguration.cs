@@ -2,5 +2,5 @@
 
 public interface IValueSearchingConfiguration
 {
-    string? Value { get; }
+    string? ExactStringValue { get; }
 }

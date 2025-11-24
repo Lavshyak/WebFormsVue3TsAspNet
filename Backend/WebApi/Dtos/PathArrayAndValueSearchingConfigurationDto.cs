@@ -1,0 +1,3 @@
+﻿namespace WebApi.Dtos;
+
+public record PathArrayAndValueSearchingConfigurationDto(string[] Path, ValueSearchingConfigurationDto ValueSearchingConfigurationDto);

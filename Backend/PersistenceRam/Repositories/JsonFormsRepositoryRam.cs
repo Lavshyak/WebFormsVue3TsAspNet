@@ -1,4 +1,5 @@
-﻿using DomainApp.Entities;
+﻿using System.Text.Json;
+using DomainApp.Entities;
 using DomainApp.Repositories.FormsRepository;
 using Nito.AsyncEx;
 
@@ -35,7 +36,12 @@ public class JsonFormsRepositoryRam : IJsonFormsRepository
                     return false;
                 }
 
-                if (jsonNode.GetValue<string>() == valueSearchingConfig.Value)
+                if (valueSearchingConfig.ExactStringValue != null && jsonNode.GetValueKind() != JsonValueKind.String)
+                {
+                    return false;
+                }
+                
+                if (jsonNode.GetValue<string>() == valueSearchingConfig.ExactStringValue)
                 {
                     return true;
                 }
@@ -54,9 +60,9 @@ public class JsonFormsRepositoryRam : IJsonFormsRepository
             query = query.Where(x => x.CreatedAt < searchingConfiguration.CreatedBefore.Value);
         }
 
-        if (searchingConfiguration.Id != null)
+        if (searchingConfiguration.Guid != null)
         {
-            query = query.Where(x => x.Guid == searchingConfiguration.Id);
+            query = query.Where(x => x.Guid == searchingConfiguration.Guid);
         }
 
         if (searchingConfiguration.Skip != null || searchingConfiguration.Take != null)
