@@ -1,7 +1,6 @@
-﻿using System.Text.Json.Nodes;
-using Domain.Entities;
+﻿using DomainApp.Entities;
 
-namespace Domain.Repositories.FormsRepository;
+namespace DomainApp.Repositories.FormsRepository;
 
 public interface IJsonFormsRepository
 {

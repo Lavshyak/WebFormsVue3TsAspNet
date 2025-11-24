@@ -4,7 +4,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersistenceRam", "PersistenceRam\PersistenceRam.csproj", "{30830FA6-BDF9-437C-9CA4-64B62A32FC4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{B9B7501B-D094-48AB-A190-2D997EA0A156}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainApp", "DomainApp\DomainApp.csproj", "{B9B7501B-D094-48AB-A190-2D997EA0A156}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

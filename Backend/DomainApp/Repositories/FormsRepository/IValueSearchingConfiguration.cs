@@ -1,4 +1,4 @@
-﻿namespace Domain.Repositories.FormsRepository;
+﻿namespace DomainApp.Repositories.FormsRepository;
 
 public interface IValueSearchingConfiguration
 {
