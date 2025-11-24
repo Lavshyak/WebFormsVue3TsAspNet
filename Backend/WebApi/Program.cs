@@ -1,3 +1,4 @@
+using System.Text.Json;
 using DomainApp.Services;
 using PersistenceRam.Repositories;
 
@@ -12,6 +13,16 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<JsonFormsRepositoryRam>();
 builder.Services.AddScoped<StoreJsonFormService>();
+
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        var originsJson = builder.Configuration["Cors:DefaultPolicy:OriginsJsonArray"] ?? throw new InvalidOperationException();
+        var origins = JsonSerializer.Deserialize<string[]>(originsJson) ?? throw new InvalidOperationException();
+        policy.WithOrigins(origins);
+    });
+});
 
 var app = builder.Build();
 

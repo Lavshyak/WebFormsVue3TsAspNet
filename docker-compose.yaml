@@ -1,0 +1,10 @@
+﻿services:
+  WebApi:
+    image: webforms-webapi:0.0.1
+    build:
+      dockerfile: ./Backend/WebApi/Dockerfile
+    environment:
+      ASPNETCORE_URLS: http://*:80
+      Cors__DefaultPolicy__OriginsJsonArray: '["http://localhost:3000"]'
+    ports:
+      - "8081:80"
