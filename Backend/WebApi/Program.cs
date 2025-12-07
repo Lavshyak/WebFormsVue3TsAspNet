@@ -21,11 +21,13 @@ builder.Services.AddCors(options =>
     {
         var originsJson = builder.Configuration["Cors:DefaultPolicy:OriginsJsonArray"] ?? throw new InvalidOperationException();
         var origins = JsonSerializer.Deserialize<string[]>(originsJson) ?? throw new InvalidOperationException();
-        policy.WithOrigins(origins);
+        policy.WithOrigins(origins).AllowAnyHeader().AllowAnyMethod();
     });
 });
 
 var app = builder.Build();
+
+app.UseCors();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
