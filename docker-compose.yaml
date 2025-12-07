@@ -1,10 +1,21 @@
 ﻿services:
-  WebApi:
+  webforms-webapi:
     image: webforms-webapi:0.0.1
     build:
       dockerfile: ./Backend/WebApi/Dockerfile
     environment:
       ASPNETCORE_URLS: http://*:80
-      Cors__DefaultPolicy__OriginsJsonArray: '["http://localhost:3000"]'
+      Cors__DefaultPolicy__OriginsJsonArray: '["http://localhost:8082", "http://localhost:8083"]'
     ports:
       - "8081:80"
+    
+  webforms-frontend:
+    image: webforms-frontend:0.0.1
+    build:
+      context: ./frontendvue3ts
+      dockerfile: Dockerfile
+      args:
+        VITE_BACKEND_URL: http://localhost:8081
+        # app 8082 hardcoded in dockerfile
+    ports:
+      - "8083:80" # nginx 80

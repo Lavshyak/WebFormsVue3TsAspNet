@@ -1,0 +1,1 @@
+{"type":"object","properties":{"options":{"type":"object","properties":{"propertyNameCaseInsensitive":{"type":"boolean"}},"additionalProperties":false,"x-readme-ref-name":"JsonNodeOptions"},"parent":{"$ref":"#/components/schemas/JsonNode"},"root":{"$ref":"#/components/schemas/JsonNode"}},"additionalProperties":false,"x-readme-ref-name":"JsonNode"}

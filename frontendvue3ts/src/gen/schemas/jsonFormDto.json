@@ -1,0 +1,1 @@
+{"required":["createdAt","formJson","guid"],"type":"object","properties":{"guid":{"type":"string","format":"uuid"},"formJson":{"$ref":"#/components/schemas/JsonNode"},"createdAt":{"type":"string","format":"date-time"}},"additionalProperties":false,"x-readme-ref-name":"JsonFormDto"}

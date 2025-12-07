@@ -1,0 +1,4 @@
+/* imported in main.ts */
+html {
+    scrollbar-gutter: stable;
+}
