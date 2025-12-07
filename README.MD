@@ -54,7 +54,7 @@ backend endpoints:
  }
 ```
 
-frontend uses TS (it was faster that way), Vue 3, Vite, vuelidate (form validation), kubb (to generate client API from backend's OpenApi), axios (easier to use with kubb).
+frontend uses TS (it was faster that way to develop), Vue 3, Vite, vuelidate (form validation), kubb (to generate client API from backend's OpenApi), axios (easier to use with kubb).
 
 PART 2.
 
