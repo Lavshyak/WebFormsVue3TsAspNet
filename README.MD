@@ -13,11 +13,12 @@ backend: http://localhost:8081, swagger: http://localhost:8081/swagger \
 frontend: http://localhost:8083 (nginx with static site)
 
 to run on host: \
-`cd Backend/WebApi` \
+`cd Backend/WebApi && ` \
 `dotnet run --launch-profile "http"`
 http://localhost:8080, swagger: http://localhost:8080/swagger
 
 `cd frontendvue3ts` \
+`npm i` \
 `npm run dev` \
 (vite dev server) \
 http://localhost:8082
