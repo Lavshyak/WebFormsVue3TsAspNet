@@ -12,7 +12,7 @@ c - done (repository with List with async multithread synchronization) \
 backend: http://localhost:8081, swagger: http://localhost:8081/swagger \
 frontend: http://localhost:8083 (nginx with static site)
 
-to run on host:
+to run on host: \
 `cd Backend/WebApi` \
 `dotnet run --launch-profile "http"`
 http://localhost:8080, swagger: http://localhost:8080/swagger
@@ -27,7 +27,7 @@ or in frontendvue3ts/.env.development→VITE_BACKEND_URL
 
 backend uses c#, .net 8, asp.net 8, Nito.AsyncEx (for async synchronization in repository). \
 architecture is more 3-layer rather than DDD. \
-backend endpoints:\
+backend endpoints:
 
 - /Forms/Store: \
   handles any JSON content, saves it+Guid+CreatedAt in repository with in-memory DB (List with help of
