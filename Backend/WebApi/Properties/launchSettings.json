@@ -14,9 +14,10 @@
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "http://localhost:5247",
+      "applicationUrl": "http://localhost:8080",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "Cors__DefaultPolicy__OriginsJsonArray": "[\"http://localhost:8082\", \"http://localhost:8083\"]"
       }
     },
     "IIS Express": {
