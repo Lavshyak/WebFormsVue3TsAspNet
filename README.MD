@@ -1,4 +1,6 @@
-﻿`docker-compose up`\
+﻿PART 1.
+
+`docker-compose up`\
 backend: http://localhost:8081, swagger: http://localhost:8081/swagger \
 frontend: http://localhost:8083 (nginx with static site)
 
@@ -44,3 +46,29 @@ backend endpoints:\
 ```
 
 frontend uses TS (it was faster that way), Vue 3, Vite, vuelidate (form validation), kubb (to generate client API from backend's OpenApi), axios (easier to use with kubb).
+
+PART 2.
+
+client can send JSON to POST /submitForm endpoint:
+```
+{
+someTextProp: "yoo this is message on forum, check the photo of my phone: !attachment_1;"
+attachments: [
+{
+"localId": "attachment_1",
+"plannedSizeInBytes": 91168468
+}
+]
+}
+```
+backend responds with JSON:
+```
+[
+{
+"attachmentLocalId": "attachment_1",
+"linkForUploadBinaryAttachmentOnForExampleObjectStorage_YandexOrMinio": "https://superobjectstorage/upload?id=hjeiu73wtw44bjh"
+ // auth token can be contained in the link or in this json node and will then be passed in the request header by client.
+}
+]
+```
+then client can upload his file to PUT https://superobjectstorage/upload?id=hjeiu73wtw44bjh with Content-Type: multipart/form-data for example.
