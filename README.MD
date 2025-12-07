@@ -1,5 +1,13 @@
 ﻿PART 1.
 
+1 - done (ProductSubmittingForm.vue) \
+2 - done (with vuelidate) \
+3 - done; a - done,
+b - done (handles any JSON),
+c - done (repository with List with async multithread synchronization) \
+4 - done (frontend - vue 3 app (and static site with nginx); swagger on backend side) \
+5 - done (Vite with cssInjectedByJsPlugin).
+
 `docker-compose up`\
 backend: http://localhost:8081, swagger: http://localhost:8081/swagger \
 frontend: http://localhost:8083 (nginx with static site)
