@@ -1,5 +1,7 @@
 ﻿PART 1.
 
+![Screenshot of web site.](https://github.com/Lavshyak/WebFormsVue3TsAspNet/blob/master/2025-12-07%2021-39-54.png)
+
 1 - done (ProductSubmittingForm.vue) \
 2 - done (with vuelidate) \
 3 - done; a - done,
