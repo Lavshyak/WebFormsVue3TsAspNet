@@ -16,6 +16,5 @@
       dockerfile: Dockerfile
       args:
         VITE_BACKEND_URL: http://localhost:8081
-        # app 8082 hardcoded in dockerfile
     ports:
       - "8083:80" # nginx 80
