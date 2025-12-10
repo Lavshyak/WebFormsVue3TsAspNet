@@ -36,7 +36,7 @@ backend endpoints:
   handles any JSON content, saves it+Guid+CreatedAt in repository with in-memory DB (List with help of
   AsyncReaderWriterLock)\
 - /Forms/Search: \
-  handles SearchingConfigurationDto, which can contains in generally a list of paths and values to search in early sent
+  handles SearchingConfigurationDto, which can contain in generally a list of paths and values to search in early sent
   JSONs, skip and take counts.
 
 ```
